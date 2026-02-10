@@ -9,10 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@popperjs/core": "^2.11.8",
+    "axios": "^1.13.4",
+    "bootstrap": "^5.3.8",
     "vue": "^3.5.27"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.3",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
     "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.5"
   },
