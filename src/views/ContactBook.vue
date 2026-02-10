@@ -23,8 +23,8 @@ export default {
     },
   },
   computed: {
-    contactString() {
-      return this.contact.map((contact) => {
+    contactStrings() {
+      return this.contacts.map((contact) => {
         const { name, email, address, phone } = contact;
         return [name, email, address, phone].join("");
       });
@@ -33,7 +33,7 @@ export default {
       if (!this.searchText) return this.contacts;
 
       return this.contacts.filter((_contact, index) =>
-        this.contactString[index].includes(this.searchText),
+        this.contactStrings[index].includes(this.searchText),
       );
     },
     activeContact() {
@@ -99,14 +99,23 @@ export default {
       <p v-else>Không có liên hệ nào.</p>
 
       <div class="mt-3 row justify-content-around align-items-center">
-        <button class="btn btn-sm btn-primary" @click="refreshList()">
+        <button
+          class="btn btn-sm btn-primary col-4 mx-auto"
+          @click="refreshList()"
+        >
           <i class="fas fa-redo"></i> Làm mới
         </button>
 
-        <button class="btn btn-sm btn-success" @click="goToAddContact">
+        <button
+          class="btn btn-sm btn-success col-4 mx-auto"
+          @click="goToAddContact"
+        >
           <i class="fas fa-plus"></i> Thêm mới
         </button>
-        <button class="btn btn-sm btn-danger" @click="removeAllContacts">
+        <button
+          class="btn btn-sm btn-danger col-4 mx-auto"
+          @click="removeAllContacts"
+        >
           <i class="fas fa-trash"></i> Xóa tất cả
         </button>
       </div>
@@ -119,6 +128,15 @@ export default {
           <i class="fas fa-address-card"></i>
         </h4>
         <ContactCard :contact="activeContact" />
+
+        <router-link
+          :to="{
+            name: 'contact.edit',
+            params: { id: activeContact._id },
+          }"
+        >
+          <span class="mt-2"> <i class="fas fa-edit"></i> Hiệu chỉnh</span>
+        </router-link>
       </div>
     </div>
   </div>
