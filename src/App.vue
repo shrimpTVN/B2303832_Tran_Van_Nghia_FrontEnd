@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <div id="app">
+  <div id="app row">
     <AppHeader />
 
     <div class="container mt-3">
@@ -19,7 +19,7 @@ export default {
 
 <style>
 .page {
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: auto;
 }
 </style>
