@@ -26,6 +26,7 @@ class ContactService {
   }
 
   async update(id, data) {
+    console.log("update");
     return (await this.api.put(`/${id}`, data)).data;
   }
 }

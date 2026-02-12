@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <div id="app row">
+  <div id="app row" class="">
     <AppHeader />
 
     <div class="container mt-3">

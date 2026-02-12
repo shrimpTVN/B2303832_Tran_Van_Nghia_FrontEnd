@@ -118,7 +118,9 @@ export default {
     </div>
 
     <div class="form-group mt-2">
-      <button class="btn btn-primary mx-1">Lưu</button>
+      <button class="btn btn-primary mx-1" type="button" @click="submitContact">
+        Lưu
+      </button>
       <button
         v-if="contactLocal._id"
         type="button"
